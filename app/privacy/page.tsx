@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
 import { GITHUB_URL } from '@/lib/copy';
-import { getCopy } from '@/lib/language';
+import { getCopy, getThemePreference } from '@/lib/language';
 
 export const metadata = {
   title: 'Privacy · ZoneBox',
@@ -10,10 +10,11 @@ export const metadata = {
 
 export default async function PrivacyPage() {
   const { lang, t } = await getCopy();
+  const theme = await getThemePreference();
 
   return (
     <div className="min-h-screen bg-background">
-      <SiteHeader lang={lang} t={t} />
+      <SiteHeader lang={lang} t={t} theme={theme} />
       <main className="mx-auto w-full max-w-3xl px-5 py-16 sm:px-8">
         <p className="mb-4 text-sm font-medium tracking-[0.18em] text-primary uppercase">
           ZoneBox

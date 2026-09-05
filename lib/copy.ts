@@ -13,6 +13,10 @@ export const copy = {
     navDownload: '下载',
     langSwitch: 'EN',
     langAria: 'Switch to English',
+    themeAria: '外观',
+    themeSystem: '跟随系统',
+    themeLight: '浅色',
+    themeDark: '深色',
     heroKicker: 'macOS 菜单栏工具',
     heroTitle: '在屏幕上划出分区，窗口落到该去的地方。',
     heroBody:
@@ -112,6 +116,10 @@ export const copy = {
     navDownload: 'Download',
     langSwitch: '中文',
     langAria: '切换到中文',
+    themeAria: 'Appearance',
+    themeSystem: 'System',
+    themeLight: 'Light',
+    themeDark: 'Dark',
     heroKicker: 'macOS menu-bar utility',
     heroTitle: 'Draw zones. Snap windows into them.',
     heroBody:

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { LanguageToggle } from '@/components/language-toggle';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { buttonVariants } from '@/components/ui/button';
 import {
   DOWNLOAD_DMG,
@@ -9,9 +10,18 @@ import {
   type Copy,
   type Lang,
 } from '@/lib/copy';
+import type { ThemePreference } from '@/lib/theme';
 import { cn } from '@/lib/utils';
 
-export function SiteHeader({ lang, t }: { lang: Lang; t: Copy }) {
+export function SiteHeader({
+  lang,
+  t,
+  theme,
+}: {
+  lang: Lang;
+  t: Copy;
+  theme: ThemePreference;
+}) {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
@@ -39,6 +49,15 @@ export function SiteHeader({ lang, t }: { lang: Lang; t: Copy }) {
             {t.navPrivacy}
           </Link>
           <LanguageToggle lang={lang} label={t.langSwitch} ariaLabel={t.langAria} />
+          <ThemeToggle
+            preference={theme}
+            labels={{
+              aria: t.themeAria,
+              system: t.themeSystem,
+              light: t.themeLight,
+              dark: t.themeDark,
+            }}
+          />
           <a
             href={DOWNLOAD_DMG}
             className={cn(buttonVariants({ size: 'sm' }), 'px-3')}

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { getLang } from '@/lib/language';
+import { ThemeScript } from '@/components/theme-script';
+import { ThemeSync } from '@/components/theme-sync';
+import { getLang, getThemePreference } from '@/lib/language';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,11 +31,20 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const lang = await getLang();
+  const theme = await getThemePreference();
   return (
-    <html lang={lang === 'en' ? 'en' : 'zh-CN'} className="dark">
+    <html
+      lang={lang === 'en' ? 'en' : 'zh-CN'}
+      data-theme={theme}
+      suppressHydrationWarning
+    >
+      <head>
+        <ThemeScript preference={theme} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background text-foreground antialiased`}
       >
+        <ThemeSync preference={theme} />
         {children}
       </body>
     </html>

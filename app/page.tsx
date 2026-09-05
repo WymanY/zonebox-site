@@ -3,15 +3,16 @@ import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
 import { buttonVariants } from '@/components/ui/button';
 import { DOWNLOAD_DMG, RELEASES_URL } from '@/lib/copy';
-import { getCopy } from '@/lib/language';
+import { getCopy, getThemePreference } from '@/lib/language';
 import { cn } from '@/lib/utils';
 
 export default async function Home() {
   const { lang, t } = await getCopy();
+  const theme = await getThemePreference();
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(1200px_600px_at_80%_-10%,rgba(163,230,53,0.16),transparent),linear-gradient(180deg,#121712_0%,#0f1410_48%,#101510_100%)]">
-      <SiteHeader lang={lang} t={t} />
+    <div className="min-h-screen bg-[radial-gradient(1200px_600px_at_80%_-10%,color-mix(in_oklch,var(--primary)_22%,transparent),transparent),linear-gradient(180deg,var(--background)_0%,color-mix(in_oklch,var(--background)_88%,var(--primary)_12%)_100%)]">
+      <SiteHeader lang={lang} t={t} theme={theme} />
       <main>
         <section className="mx-auto grid w-full max-w-6xl gap-12 px-5 pb-8 pt-12 sm:px-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center lg:pt-16">
           <div className="max-w-xl">
@@ -51,7 +52,7 @@ export default async function Home() {
               width={1600}
               height={1067}
               priority
-              className="relative z-10 w-full rounded-[1.6rem] border border-primary/25 shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
+              className="relative z-10 w-full rounded-[1.6rem] border border-primary/25 shadow-[0_24px_80px_color-mix(in_oklch,var(--foreground)_18%,transparent)]"
             />
           </div>
         </section>
@@ -109,7 +110,7 @@ export default async function Home() {
         </section>
 
         <section className="px-5 pb-20 sm:px-8">
-          <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-6 rounded-[1.8rem] border border-primary/25 bg-[linear-gradient(135deg,rgba(163,230,53,0.12),rgba(18,23,18,0.4))] px-8 py-10 sm:flex-row sm:items-center">
+          <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-6 rounded-[1.8rem] border border-primary/25 bg-[linear-gradient(135deg,color-mix(in_oklch,var(--primary)_16%,transparent),color-mix(in_oklch,var(--card)_82%,transparent))] px-8 py-10 sm:flex-row sm:items-center">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight">{t.ctaTitle}</h2>
               <p className="mt-3 max-w-xl text-base leading-7 text-muted-foreground">
