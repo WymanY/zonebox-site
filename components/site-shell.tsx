@@ -37,6 +37,12 @@ export function SiteHeader({
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">
           <Link
+            href="/#guide"
+            className="hidden rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground sm:inline"
+          >
+            {t.navGuide}
+          </Link>
+          <Link
             href="/#features"
             className="hidden rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground sm:inline"
           >

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { GuidePanel } from '@/components/guide-panel';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
 import { buttonVariants } from '@/components/ui/button';
 import { DOWNLOAD_DMG, RELEASES_URL } from '@/lib/copy';
@@ -57,22 +58,15 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8">
-          <h2 className="text-2xl font-semibold tracking-tight">{t.stepsTitle}</h2>
-          <ol className="mt-8 grid gap-4 md:grid-cols-3">
-            {t.steps.map((step) => (
-              <li
-                key={step.n}
-                className="rounded-2xl border border-border/80 bg-card/70 p-6"
-              >
-                <p className="font-mono text-sm text-primary">{step.n}</p>
-                <h3 className="mt-3 text-xl font-medium">{step.title}</h3>
-                <p className="mt-3 text-base leading-7 text-muted-foreground">
-                  {step.body}
-                </p>
-              </li>
-            ))}
-          </ol>
+        <section id="guide" className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8">
+          <h2 className="text-2xl font-semibold tracking-tight">{t.guideTitle}</h2>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-muted-foreground">
+            {t.guideBody}
+          </p>
+          <div className="mt-8">
+            <GuidePanel t={t} />
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground">{t.guideHint}</p>
         </section>
 
         <section id="features" className="mx-auto w-full max-w-6xl px-5 py-8 sm:px-8">
