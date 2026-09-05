@@ -1,6 +1,6 @@
 'use client';
 
-import { Monitor, Moon, Sun } from 'lucide-react';
+import { Check, Monitor, Moon, Sun, SunMoon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 import { Button } from '@/components/ui/button';
@@ -11,12 +11,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { THEME_COOKIE, type ThemePreference } from '@/lib/theme';
-
-const icons = {
-  system: Monitor,
-  light: Sun,
-  dark: Moon,
-} as const;
 
 export function ThemeToggle({
   preference,
@@ -31,7 +25,6 @@ export function ThemeToggle({
   };
 }) {
   const router = useRouter();
-  const Icon = icons[preference];
 
   function setPreference(next: ThemePreference) {
     document.cookie = `${THEME_COOKIE}=${next}; path=/; max-age=31536000; samesite=lax`;
@@ -55,28 +48,59 @@ export function ThemeToggle({
           <Button
             type="button"
             variant="ghost"
-            size="icon-sm"
+            size="sm"
             aria-label={labels.aria}
             className="text-muted-foreground hover:text-foreground"
           />
         }
       >
-        <Icon />
+        <SunMoon />
+        {labels.aria}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-36">
-        <DropdownMenuItem onClick={() => setPreference('system')}>
+        <ThemeOption
+          selected={preference === 'system'}
+          onSelect={() => setPreference('system')}
+        >
           <Monitor />
           {labels.system}
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setPreference('light')}>
+        </ThemeOption>
+        <ThemeOption
+          selected={preference === 'light'}
+          onSelect={() => setPreference('light')}
+        >
           <Sun />
           {labels.light}
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setPreference('dark')}>
+        </ThemeOption>
+        <ThemeOption
+          selected={preference === 'dark'}
+          onSelect={() => setPreference('dark')}
+        >
           <Moon />
           {labels.dark}
-        </DropdownMenuItem>
+        </ThemeOption>
       </DropdownMenuContent>
     </DropdownMenu>
+  );
+}
+
+function ThemeOption({
+  selected,
+  onSelect,
+  children,
+}: {
+  selected: boolean;
+  onSelect: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <DropdownMenuItem
+      onClick={onSelect}
+      className="justify-between pr-2"
+      aria-checked={selected}
+    >
+      <span className="flex items-center gap-1.5">{children}</span>
+      {selected ? <Check /> : <span className="size-4" />}
+    </DropdownMenuItem>
   );
 }
