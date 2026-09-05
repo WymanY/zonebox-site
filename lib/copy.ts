@@ -164,31 +164,49 @@ export const copy = {
     footerPrivacy: '隐私',
     footerGithub: 'GitHub',
     footerNote: '© 2026 Wyman. 0.3 同时支持 Apple Silicon 和 Intel。',
-    privacyTitle: '隐私',
+    privacyKicker: '隐私',
+    privacyTitle: '一切都留在这台 Mac 上。',
     privacyIntro:
       'ZoneBox 是装在你 Mac 上的菜单栏应用。它要移动窗口，所以需要辅助功能权限。它不设账号，也不把窗口内容送到网上。',
+    privacyFacts: ['数据只存本机', '没有账号', '没有遥测', '下载走 GitHub'],
+    privacyStage: {
+      window: '隐私与安全性',
+      hint: '允许下列应用控制你的电脑。',
+      accessibility: '辅助功能',
+      accessibilityNote: '吸附、分隔杆、工作区需要',
+      screen: '屏幕录制',
+      screenNote: '仅置顶预览时申请',
+      on: '已开启',
+      off: '未申请',
+    },
     privacySections: [
       {
+        tag: '本地',
         title: '本机保存的内容',
         body: '布局、工作区方案和设置以 JSON 写在本机 Application Support。这些文件不会被 ZoneBox 上传。',
       },
       {
+        tag: '必需',
         title: '辅助功能',
         body: '吸附、分隔杆、工作区归位都要移动其他应用的窗口，因此需要辅助功能。你可以随时在系统设置里关掉。关掉后，ZoneBox 仍留在菜单栏，但不会再移动窗口。',
       },
       {
+        tag: '可选',
         title: '屏幕录制',
         body: '只有在使用置顶预览等需要画面的功能时，才会申请屏幕录制。首页下载和普通吸附都不需要这项权限。',
       },
       {
+        tag: '无',
         title: '没有账号和遥测',
         body: '没有登录、没有云同步、没有使用统计。下载走 GitHub Release，不经过 ZoneBox 自己的服务器。',
       },
       {
+        tag: 'GitHub',
         title: '联系',
         body: '有问题可以在 GitHub 仓库提 issue。',
       },
     ],
+    privacyContactCta: '去 GitHub 提 issue',
     backHome: '返回首页',
   },
   en: {
@@ -349,31 +367,49 @@ export const copy = {
     footerPrivacy: 'Privacy',
     footerGithub: 'GitHub',
     footerNote: '© 2026 Wyman. 0.3 covers Apple Silicon and Intel.',
-    privacyTitle: 'Privacy',
+    privacyKicker: 'Privacy',
+    privacyTitle: 'Everything stays on this Mac.',
     privacyIntro:
       'ZoneBox is a menu-bar app on your Mac. It needs Accessibility because it moves windows. It has no accounts and does not send window contents to a server.',
+    privacyFacts: ['Local data only', 'No accounts', 'No telemetry', 'Downloads via GitHub'],
+    privacyStage: {
+      window: 'Privacy & Security',
+      hint: 'Allow the apps below to control your computer.',
+      accessibility: 'Accessibility',
+      accessibilityNote: 'Snapping, dividers, workspaces',
+      screen: 'Screen Recording',
+      screenNote: 'Only asked for pin preview',
+      on: 'On',
+      off: 'Not requested',
+    },
     privacySections: [
       {
+        tag: 'Local',
         title: 'What stays on this Mac',
         body: 'Layouts, workspace profiles, and settings are JSON files in Application Support. ZoneBox does not upload them.',
       },
       {
+        tag: 'Required',
         title: 'Accessibility',
         body: 'Snapping, divider handles, and workspace restore all move other apps’ windows, so Accessibility is required. You can turn it off in System Settings at any time. ZoneBox stays in the menu bar, but it will not move windows.',
       },
       {
+        tag: 'Optional',
         title: 'Screen Recording',
         body: 'Screen Recording is requested only for features that need a picture of a window, such as pin preview. Ordinary snapping and the download on this site do not need it.',
       },
       {
+        tag: 'None',
         title: 'No accounts, no telemetry',
         body: 'There is no sign-in, no cloud sync, and no usage analytics. Downloads come from GitHub Releases, not a ZoneBox server.',
       },
       {
+        tag: 'GitHub',
         title: 'Contact',
         body: 'Open an issue on the GitHub repository.',
       },
     ],
+    privacyContactCta: 'Open an issue on GitHub',
     backHome: 'Back to home',
   },
 } as const;
