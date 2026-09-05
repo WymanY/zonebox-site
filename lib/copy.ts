@@ -1,7 +1,7 @@
 export type Lang = 'zh' | 'en';
 
 export const DOWNLOAD_DMG =
-  'https://github.com/WymanY/ZoneBox/releases/download/0.2/ZoneBox-0.2-arm64.dmg';
+  'https://github.com/WymanY/ZoneBox/releases/download/0.3/ZoneBox-0.3.dmg';
 export const RELEASES_URL = 'https://github.com/WymanY/ZoneBox/releases/latest';
 export const GITHUB_URL = 'https://github.com/WymanY/ZoneBox';
 
@@ -22,8 +22,8 @@ export const copy = {
     heroTitle: '在屏幕上划出分区，窗口落到该去的地方。',
     heroBody:
       'ZoneBox 常驻时钟旁边，没有 Dock 图标。拖一下或按个快捷键，窗口就吸附进编号分区。',
-    download: '下载 0.2',
-    downloadMeta: 'macOS 14+ · Apple Silicon · 已公证',
+    download: '下载 0.3',
+    downloadMeta: 'macOS 14+ · Apple Silicon 与 Intel · 已公证',
     otherRelease: '查看 GitHub Release',
     guideTitle: '怎么用',
     guideBody: 'ZoneBox 住在菜单栏。先开辅助功能，再选布局，然后把窗口送进分区。下面六项是它真正和普通分屏不一样的地方。',
@@ -147,7 +147,7 @@ export const copy = {
       },
       {
         title: 'Developer ID + 公证',
-        body: '当前 0.2 是 Apple Silicon 直装包，拖进“应用程序”即可。',
+        body: '当前 0.3 是通用二进制直装包，Apple Silicon 和 Intel 都能用，拖进“应用程序”即可。',
       },
       {
         title: '数据留在本机',
@@ -155,10 +155,10 @@ export const copy = {
       },
     ],
     ctaTitle: '把窗口放进自己的格子里',
-    ctaBody: '下载公证过的 0.2，装完先走一遍欢迎引导。',
+    ctaBody: '下载公证过的 0.3，装完先走一遍欢迎引导。',
     footerPrivacy: '隐私',
     footerGithub: 'GitHub',
-    footerNote: '© 2026 Wyman. 目前仅提供 Apple Silicon 安装包。',
+    footerNote: '© 2026 Wyman. 0.3 同时支持 Apple Silicon 和 Intel。',
     privacyTitle: '隐私',
     privacyIntro:
       'ZoneBox 是装在你 Mac 上的菜单栏应用。它要移动窗口，所以需要辅助功能权限。它不设账号，也不把窗口内容送到网上。',
@@ -203,8 +203,8 @@ export const copy = {
     heroTitle: 'Draw zones. Snap windows into them.',
     heroBody:
       'ZoneBox lives next to the clock. There is no Dock icon. Drag a window or press a key, and it lands in a numbered zone.',
-    download: 'Download 0.2',
-    downloadMeta: 'macOS 14+ · Apple Silicon · notarized',
+    download: 'Download 0.3',
+    downloadMeta: 'macOS 14+ · Apple Silicon and Intel · notarized',
     otherRelease: 'GitHub Release',
     guideTitle: 'How to use it',
     guideBody: 'ZoneBox lives in the menu bar. Turn on Accessibility, pick a layout, then send windows into zones. These six pieces are what make it different from macOS Split View.',
@@ -328,7 +328,7 @@ export const copy = {
       },
       {
         title: 'Developer ID + notarized',
-        body: '0.2 is an Apple Silicon disk image. Drag ZoneBox.app into Applications.',
+        body: '0.3 is a universal disk image for Apple Silicon and Intel. Drag ZoneBox.app into Applications.',
       },
       {
         title: 'Stays on the Mac',
@@ -336,10 +336,10 @@ export const copy = {
       },
     ],
     ctaTitle: 'Put windows in their places',
-    ctaBody: 'Download notarized 0.2, then walk through the welcome tour.',
+    ctaBody: 'Download notarized 0.3, then walk through the welcome tour.',
     footerPrivacy: 'Privacy',
     footerGithub: 'GitHub',
-    footerNote: '© 2026 Wyman. Apple Silicon only for now.',
+    footerNote: '© 2026 Wyman. 0.3 covers Apple Silicon and Intel.',
     privacyTitle: 'Privacy',
     privacyIntro:
       'ZoneBox is a menu-bar app on your Mac. It needs Accessibility because it moves windows. It has no accounts and does not send window contents to a server.',

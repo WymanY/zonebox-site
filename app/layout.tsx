@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: 'ZoneBox',
   description:
     '在屏幕上划出分区，拖一下或按个快捷键，窗口就吸附进去。原生 macOS 菜单栏应用，支持 macOS 14 与 Apple Silicon。',
+    '在屏幕上划出分区，拖一下或按个快捷键，窗口就吸附进去。原生 macOS 菜单栏应用，支持 macOS 14，Apple Silicon 与 Intel。',
   icons: {
     icon: '/icon.png',
     apple: '/apple-touch-icon.png',
