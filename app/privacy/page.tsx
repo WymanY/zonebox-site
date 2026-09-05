@@ -1,3 +1,4 @@
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
@@ -13,33 +14,49 @@ export default async function PrivacyPage() {
   const theme = await getThemePreference();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative min-h-screen overflow-x-clip">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[30rem] bg-[radial-gradient(70%_50%_at_50%_0%,color-mix(in_oklch,var(--primary)_14%,transparent),transparent_70%)]"
+      />
       <SiteHeader lang={lang} t={t} theme={theme} />
-      <main className="mx-auto w-full max-w-3xl px-5 py-16 sm:px-8">
-        <p className="mb-4 text-sm font-medium tracking-[0.18em] text-primary uppercase">
-          ZoneBox
+      <main className="mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 lg:py-20">
+        <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">ZoneBox</p>
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
+          {t.privacyTitle}
+        </h1>
+        <p className="mt-6 text-lg leading-8 text-muted-foreground text-pretty">
+          {t.privacyIntro}
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight">{t.privacyTitle}</h1>
-        <p className="mt-5 text-lg leading-8 text-muted-foreground">{t.privacyIntro}</p>
-        <div className="mt-12 space-y-10">
-          {t.privacySections.map((section) => (
-            <section key={section.title}>
-              <h2 className="text-2xl font-medium tracking-tight">{section.title}</h2>
-              <p className="mt-3 text-base leading-8 text-muted-foreground">
-                {section.body}
-              </p>
+        <div className="card-surface mt-12 divide-y rounded-[1.75rem]">
+          {t.privacySections.map((section, index) => (
+            <section key={section.title} className="grid gap-3 p-6 sm:grid-cols-[3rem_1fr] sm:gap-6 sm:p-8">
+              <span className="font-mono text-sm text-muted-foreground/70">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h2 className="text-xl font-semibold tracking-tight">{section.title}</h2>
+                <p className="mt-2 text-[15px] leading-7 text-muted-foreground">{section.body}</p>
+              </div>
             </section>
           ))}
         </div>
-        <p className="mt-12 text-sm">
-          <Link href="/" className="text-primary hover:underline">
+        <div className="mt-10 flex flex-wrap items-center gap-2 text-sm">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium text-primary transition-colors hover:bg-primary/10"
+          >
+            <ArrowLeft className="size-4" />
             {t.backHome}
           </Link>
-          <span className="mx-3 text-muted-foreground">·</span>
-          <a href={GITHUB_URL} className="text-primary hover:underline">
+          <a
+            href={GITHUB_URL}
+            className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium text-primary transition-colors hover:bg-primary/10"
+          >
             GitHub
+            <ArrowUpRight className="size-4" />
           </a>
-        </p>
+        </div>
       </main>
       <SiteFooter t={t} />
     </div>

@@ -39,6 +39,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-zone: var(--zone);
+  --color-zone-border: var(--zone-border);
+  --color-screen: var(--screen);
+  --color-screen-foreground: var(--screen-foreground);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -46,80 +50,98 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-snap-in: snap-in 6s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  --animate-zone-pulse: zone-pulse 6s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 body {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'PingFang SC',
+    'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', Helvetica, Arial,
+    sans-serif;
 }
 
 :root {
-  --background: oklch(0.975 0.012 120);
-  --foreground: oklch(0.22 0.02 145);
-  --card: oklch(0.995 0.006 120);
-  --card-foreground: oklch(0.22 0.02 145);
-  --popover: oklch(0.995 0.006 120);
-  --popover-foreground: oklch(0.22 0.02 145);
-  --primary: oklch(0.52 0.14 135);
-  --primary-foreground: oklch(0.99 0.01 120);
-  --secondary: oklch(0.94 0.02 130);
-  --secondary-foreground: oklch(0.24 0.03 145);
-  --muted: oklch(0.945 0.016 125);
-  --muted-foreground: oklch(0.45 0.03 145);
-  --accent: oklch(0.94 0.04 130);
-  --accent-foreground: oklch(0.28 0.05 140);
+  /* Light: cool paper, macOS system blue accent (#007AFF). */
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.2 0.03 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.03 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.03 265);
+  --primary: oklch(0.6 0.2 256);
+  --primary-foreground: oklch(0.99 0.005 250);
+  --secondary: oklch(0.955 0.01 250);
+  --secondary-foreground: oklch(0.25 0.03 265);
+  --muted: oklch(0.955 0.01 250);
+  --muted-foreground: oklch(0.5 0.03 260);
+  --accent: oklch(0.94 0.03 250);
+  --accent-foreground: oklch(0.3 0.08 258);
   --destructive: oklch(0.6 0.2 25);
-  --border: oklch(0.88 0.02 140);
-  --input: oklch(0.88 0.02 140);
-  --ring: oklch(0.52 0.14 135);
-  --chart-1: oklch(0.52 0.14 135);
-  --chart-2: oklch(0.68 0.08 145);
-  --chart-3: oklch(0.55 0.04 145);
-  --chart-4: oklch(0.42 0.03 145);
-  --chart-5: oklch(0.3 0.02 145);
-  --radius: 0.9rem;
-  --sidebar: oklch(0.98 0.01 120);
-  --sidebar-foreground: oklch(0.22 0.02 145);
-  --sidebar-primary: oklch(0.52 0.14 135);
-  --sidebar-primary-foreground: oklch(0.99 0.01 120);
-  --sidebar-accent: oklch(0.94 0.02 130);
-  --sidebar-accent-foreground: oklch(0.24 0.03 145);
-  --sidebar-border: oklch(0.88 0.02 140);
-  --sidebar-ring: oklch(0.52 0.14 135);
+  --border: oklch(0.905 0.012 255);
+  --input: oklch(0.905 0.012 255);
+  --ring: oklch(0.6 0.2 256);
+  --chart-1: oklch(0.6 0.2 256);
+  --chart-2: oklch(0.7 0.12 230);
+  --chart-3: oklch(0.55 0.05 260);
+  --chart-4: oklch(0.42 0.04 265);
+  --chart-5: oklch(0.3 0.03 265);
+  --radius: 0.85rem;
+  --sidebar: oklch(0.985 0.004 250);
+  --sidebar-foreground: oklch(0.2 0.03 265);
+  --sidebar-primary: oklch(0.6 0.2 256);
+  --sidebar-primary-foreground: oklch(0.99 0.005 250);
+  --sidebar-accent: oklch(0.955 0.01 250);
+  --sidebar-accent-foreground: oklch(0.25 0.03 265);
+  --sidebar-border: oklch(0.905 0.012 255);
+  --sidebar-ring: oklch(0.6 0.2 256);
+  /* Zone overlay colors mirror ZoneOverlayView: systemBlue fill, white border. */
+  --zone: oklch(0.6 0.2 256);
+  --zone-border: oklch(1 0 0);
+  /* Illustrated "screen" surfaces stay dark in both themes, like the app icon. */
+  --screen: oklch(0.2 0.045 268);
+  --screen-foreground: oklch(0.97 0.01 250);
   color-scheme: light;
 }
 
 .dark {
-  --background: oklch(0.16 0.012 145);
-  --foreground: oklch(0.96 0.012 110);
-  --card: oklch(0.2 0.014 145);
-  --card-foreground: oklch(0.96 0.012 110);
-  --popover: oklch(0.2 0.014 145);
-  --popover-foreground: oklch(0.96 0.012 110);
-  --primary: oklch(0.87 0.18 125);
-  --primary-foreground: oklch(0.18 0.04 135);
-  --secondary: oklch(0.25 0.016 145);
-  --secondary-foreground: oklch(0.95 0.01 110);
-  --muted: oklch(0.25 0.014 145);
-  --muted-foreground: oklch(0.74 0.02 130);
-  --accent: oklch(0.29 0.045 135);
-  --accent-foreground: oklch(0.92 0.08 125);
+  /* Dark: the app icon's navy, with a brighter blue so it reads on navy. */
+  --background: oklch(0.165 0.04 268);
+  --foreground: oklch(0.96 0.01 250);
+  --card: oklch(0.205 0.042 267);
+  --card-foreground: oklch(0.96 0.01 250);
+  --popover: oklch(0.215 0.042 267);
+  --popover-foreground: oklch(0.96 0.01 250);
+  --primary: oklch(0.7 0.17 252);
+  --primary-foreground: oklch(0.14 0.04 268);
+  --secondary: oklch(0.25 0.04 267);
+  --secondary-foreground: oklch(0.95 0.01 250);
+  --muted: oklch(0.245 0.04 267);
+  --muted-foreground: oklch(0.72 0.03 258);
+  --accent: oklch(0.29 0.07 262);
+  --accent-foreground: oklch(0.9 0.06 250);
   --destructive: oklch(0.65 0.2 25);
-  --border: oklch(0.34 0.02 145);
-  --input: oklch(0.34 0.02 145);
-  --ring: oklch(0.87 0.18 125);
-  --chart-1: oklch(0.87 0.18 125);
-  --chart-2: oklch(0.72 0.08 145);
-  --chart-3: oklch(0.55 0.04 145);
-  --chart-4: oklch(0.42 0.03 145);
-  --chart-5: oklch(0.3 0.02 145);
-  --sidebar: oklch(0.2 0.014 145);
-  --sidebar-foreground: oklch(0.96 0.012 110);
-  --sidebar-primary: oklch(0.87 0.18 125);
-  --sidebar-primary-foreground: oklch(0.18 0.04 135);
-  --sidebar-accent: oklch(0.25 0.016 145);
-  --sidebar-accent-foreground: oklch(0.95 0.01 110);
-  --sidebar-border: oklch(0.34 0.02 145);
-  --sidebar-ring: oklch(0.87 0.18 125);
+  --border: oklch(0.32 0.045 266);
+  --input: oklch(0.32 0.045 266);
+  --ring: oklch(0.7 0.17 252);
+  --chart-1: oklch(0.7 0.17 252);
+  --chart-2: oklch(0.75 0.1 230);
+  --chart-3: oklch(0.6 0.05 260);
+  --chart-4: oklch(0.45 0.04 265);
+  --chart-5: oklch(0.32 0.03 265);
+  --sidebar: oklch(0.205 0.042 267);
+  --sidebar-foreground: oklch(0.96 0.01 250);
+  --sidebar-primary: oklch(0.7 0.17 252);
+  --sidebar-primary-foreground: oklch(0.14 0.04 268);
+  --sidebar-accent: oklch(0.25 0.04 267);
+  --sidebar-accent-foreground: oklch(0.95 0.01 250);
+  --sidebar-border: oklch(0.32 0.045 266);
+  --sidebar-ring: oklch(0.7 0.17 252);
+  --zone: oklch(0.66 0.19 254);
+  --zone-border: oklch(1 0 0);
+  --screen: oklch(0.15 0.04 268);
+  --screen-foreground: oklch(0.97 0.01 250);
   color-scheme: dark;
 }
 
@@ -131,6 +153,105 @@ body {
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
+  }
+}
+
+@utility zone-grid-bg {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklch, var(--foreground) 6%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--foreground) 6%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    black 30%,
+    transparent 100%
+  );
+}
+
+@utility card-surface {
+  background: color-mix(in oklch, var(--card) 88%, transparent);
+  border: 1px solid color-mix(in oklch, var(--border) 90%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklch, white 60%, transparent) inset,
+    0 1px 2px color-mix(in oklch, var(--foreground) 4%, transparent),
+    0 12px 32px -20px color-mix(in oklch, var(--foreground) 25%, transparent);
+}
+
+.dark .card-surface {
+  box-shadow:
+    0 1px 0 color-mix(in oklch, white 7%, transparent) inset,
+    0 12px 40px -20px oklch(0 0 0 / 0.6);
+}
+
+@keyframes snap-in {
+  0%,
+  12% {
+    transform: translate(46%, 34%) scale(0.72);
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  40% {
+    transform: translate(46%, 34%) scale(0.72);
+  }
+  58%,
+  88% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes zone-pulse {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  40%,
+  56% {
+    opacity: 1;
+  }
+  66%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-snap-in,
+  .animate-zone-pulse,
+  .animate-fade-up {
+    animation: none;
+  }
+  .animate-snap-in {
+    opacity: 1;
+    transform: none;
+  }
+  .animate-zone-pulse {
+    opacity: 1;
   }
 }

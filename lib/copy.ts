@@ -25,6 +25,11 @@ export const copy = {
     download: '下载 0.3',
     downloadMeta: 'macOS 14+ · Apple Silicon 与 Intel · 已公证',
     otherRelease: '查看 GitHub Release',
+    heroLayoutLabel: '布局 · 三栏',
+    stepsKicker: '上手',
+    guideKicker: '教程',
+    featuresKicker: '功能',
+    trustKicker: '为什么放心',
     guideTitle: '怎么用',
     guideBody: 'ZoneBox 住在菜单栏。先开辅助功能，再选布局，然后把窗口送进分区。下面六项是它真正和普通分屏不一样的地方。',
     guideHint: '装完后会弹出欢迎引导，也可以随时右键菜单栏图标再看一遍。',
@@ -185,7 +190,6 @@ export const copy = {
       },
     ],
     backHome: '返回首页',
-    heroAlt: '超宽显示器上，编辑器、浏览器和终端分别落在四块荧光绿分区里。',
   },
   en: {
     brand: 'ZoneBox',
@@ -206,6 +210,11 @@ export const copy = {
     download: 'Download 0.3',
     downloadMeta: 'macOS 14+ · Apple Silicon and Intel · notarized',
     otherRelease: 'GitHub Release',
+    heroLayoutLabel: 'Layout · Columns',
+    stepsKicker: 'Getting started',
+    guideKicker: 'Guide',
+    featuresKicker: 'Features',
+    trustKicker: 'Why trust it',
     guideTitle: 'How to use it',
     guideBody: 'ZoneBox lives in the menu bar. Turn on Accessibility, pick a layout, then send windows into zones. These six pieces are what make it different from macOS Split View.',
     guideHint: 'The welcome tour appears on first launch. Replay it anytime from the menu-bar icon.',
@@ -366,8 +375,6 @@ export const copy = {
       },
     ],
     backHome: 'Back to home',
-    heroAlt:
-      'An ultrawide display with an editor, browser, and terminal sitting inside four lime-green zones.',
   },
 } as const;
 
