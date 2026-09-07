@@ -10,7 +10,8 @@ Read product truth from the ZoneBox app checkout, then change this site.
 | --- | --- |
 | App checkout | `/Users/wyman/Documents/fancyzone_mac` |
 | Site GitHub | https://github.com/WymanY/zonebox-site |
-| Live site | https://zonebox-site.vercel.app |
+| Live site | https://zonebox-site.wuyun768.workers.dev |
+| Previous Vercel site | https://zonebox-site.vercel.app |
 
 Do not edit the app from a website task unless the user explicitly asks. Do not put the site inside `fancyzone_mac`.
 
@@ -28,6 +29,8 @@ Site copy lives in `lib/copy.ts`. Keep it aligned with `L10n.swift` instead of r
 
 ## Deploy
 
-Push `main` to the `github` remote. Vercel builds from [WymanY/zonebox-site](https://github.com/WymanY/zonebox-site).
+Primary hosting is Cloudflare Workers. From this repo, deploy with `npm run deploy` (`npx @vinext/cloudflare deploy`). Do not delete or pause the Vercel project unless the user explicitly asks.
+
+Push `main` to the `github` remote so GitHub stays in sync. Vercel still auto-builds from [WymanY/zonebox-site](https://github.com/WymanY/zonebox-site) until it is taken down.
 
 The `origin` remote is the ChatGPT Sites source. Do not use it as the GitHub repo.

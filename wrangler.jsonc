@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "zonebox-site",
+  "account_id": "156c49d8e7f54688e65bb52768c3538e",
+  "compatibility_date": "2026-09-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "vinext/server/fetch-handler",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "dist/client",
+    "not_found_handling": "none",
+    "binding": "ASSETS"
+  },
+  "cache": {
+    "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "VINEXT_KV_CACHE",
+      "id": "2c4d558e410c4e48b3d64ccab0105883"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

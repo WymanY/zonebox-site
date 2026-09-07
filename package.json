@@ -10,7 +10,10 @@
     "build": "vinext build",
     "start": "vinext start",
     "lint": "oxlint",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "preview": "vinext build && wrangler dev",
+    "deploy": "npx --yes @vinext/cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
