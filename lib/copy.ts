@@ -8,6 +8,7 @@ export const copy = {
     brand: 'ZoneBox',
     navFeatures: '功能',
     navPrivacy: '隐私',
+    navTerms: '条款',
     navDownload: '下载',
     navBuy: '购买 Pro',
     navPricing: '价格',
@@ -185,9 +186,11 @@ export const copy = {
     ],
     pricingCta: '购买 Pro',
     pricingFine: '由 Creem 收款并开具发票。授权码会发到邮箱，同一授权可用于 2 台 Mac。前 30 天以 9.99 美元出售。',
+    pricingTerms: '购买即表示你同意使用条款。',
     ctaTitle: '把窗口放进自己的格子里',
     ctaBody: '下载公证过的 0.4，装完先走一遍欢迎引导。14 天内可以试用 Pro。',
     footerPrivacy: '隐私',
+    footerTerms: '使用条款',
     footerGithub: '下载',
     footerNote: '© 2026 Wyman. 0.4 同时支持 Apple Silicon 和 Intel。',
     privacyKicker: '隐私',
@@ -238,6 +241,63 @@ export const copy = {
       },
     ],
     privacyContactCta: '返回首页下载',
+    termsKicker: '使用条款',
+    termsTitle: '使用 ZoneBox 前，请先读这些条款。',
+    termsIntro:
+      '下载、安装、使用或购买 ZoneBox，即表示你同意本条款。ZoneBox 是装在你 Mac 上的菜单栏窗口分区工具，由 Wyman 提供。通过本站购买时，Creem 作为销售记录方收款、开票并处理税费。',
+    termsUpdated: '最近更新：2026 年 9 月 7 日',
+    termsFacts: ['吸附功能免费', 'Pro 一次买断当前版本', '同一授权 2 台 Mac', 'Creem 收款开票'],
+    termsSections: [
+      {
+        title: '适用范围',
+        body: '本条款适用于 ZoneBox 网站、安装包和 macOS 应用。如果你不同意，请不要下载或使用 ZoneBox。',
+      },
+      {
+        title: '运营与收款',
+        body: 'ZoneBox 软件由 Wyman 提供，版权所有。通过本站购买 ZoneBox Pro 时，Creem（Armitage Labs OÜ）作为销售记录方（Merchant of Record）处理付款、发票和税费。付款还须遵守 Creem 的买方条款：https://www.creem.io/buyer-terms',
+      },
+      {
+        title: '软件许可',
+        body: '我们授予你一项个人、非独占、不可转让的许可，让你在自己拥有或控制的 Mac 上安装和使用 ZoneBox。你不得转售、再授权、公开分发安装包，也不得分享、出售或出借授权码。',
+      },
+      {
+        title: '免费、试用与 Pro',
+        body: '免费包含布局编辑器、Shift / 右键拖拽吸附、数字分区快捷键和分隔杆。新安装含 14 天 Pro 试用。ZoneBox Pro 一次买断当前版本，同一授权可用于 2 台 Mac，并解锁工作区方案、标题栏悬停置顶和快速吸附。试用结束后，Pro 功能需要授权；吸附与布局仍然免费。',
+      },
+      {
+        title: '价格与激活',
+        body: '当前标价 14.99 美元；前 30 天以 9.99 美元出售。付款完成后，Creem 会把授权码发到你的邮箱，本站成功页也会显示。在 ZoneBox 设置 → 许可中激活。激活会把授权码和匿名设备标识发给 Creem，不会上传窗口内容或布局。',
+      },
+      {
+        title: '退款',
+        body: '购买后 14 天内，如果你无法在受支持的 Mac（macOS 14 或更高版本，Apple Silicon 或 Intel）上运行 ZoneBox，或有效授权无法激活，可以申请退款。退款由 Creem 处理。14 天之后，除法律或 Creem 另行要求外，购买一般不予退款。请先通过本站公布的联系方式和付款收据联系，而不是直接向银行拒付。',
+      },
+      {
+        title: '使用规则',
+        body: '使用 ZoneBox 需要 macOS 14 或更高版本。移动其他应用的窗口需要在系统设置中打开辅助功能。置顶预览等功能可能还会申请屏幕录制。请勿绕过授权校验，请勿将本应用用于违法目的。',
+      },
+      {
+        title: '免责声明',
+        body: 'ZoneBox 按现状提供。窗口吸附依赖于 macOS 和其他应用；在台前调度等环境中，可能无法按预期工作。我们不保证不间断或完全无错运行。',
+      },
+      {
+        title: '责任限制',
+        body: '在法律允许的范围内，我们对间接损失、数据丢失或利润损失不承担责任。对已付费的 ZoneBox Pro 授权，责任上限为你为该授权支付的金额。',
+      },
+      {
+        title: '隐私',
+        body: '关于本机保存的数据、系统权限和授权校验，请阅读本站的隐私说明。',
+      },
+      {
+        title: '条款变更',
+        body: '我们可能通过在本页发布新版本来更新这些条款。更新日后继续使用 ZoneBox，即表示你接受新条款。',
+      },
+      {
+        title: '联系',
+        body: '条款、授权或退款问题，请使用本站公布的联系方式，以及 Creem 付款收据上的联系信息。付款处理问题也可以直接联系 Creem。',
+      },
+    ],
+    termsPrivacyCta: '阅读隐私说明',
     backHome: '返回首页',
     successTitle: '授权码已经就绪。',
     successBody: '把授权码粘进 ZoneBox 的设置 → 许可，或点下面的按钮在这台 Mac 上激活。',
@@ -252,6 +312,7 @@ export const copy = {
     brand: 'ZoneBox',
     navFeatures: 'Features',
     navPrivacy: 'Privacy',
+    navTerms: 'Terms',
     navDownload: 'Download',
     navBuy: 'Buy Pro',
     navPricing: 'Pricing',
@@ -429,9 +490,11 @@ export const copy = {
     ],
     pricingCta: 'Buy Pro',
     pricingFine: 'Creem handles checkout and invoices. The license key is emailed and works on 2 Macs. Launch pricing is US$9.99 for 30 days.',
+    pricingTerms: 'Buying Pro means you agree to the Terms of Service.',
     ctaTitle: 'Put windows in their places',
     ctaBody: 'Download notarized 0.4, walk through the welcome tour, and try Pro for 14 days.',
     footerPrivacy: 'Privacy',
+    footerTerms: 'Terms of Service',
     footerGithub: '下载',
     footerNote: '© 2026 Wyman. 0.4 covers Apple Silicon and Intel.',
     privacyKicker: 'Privacy',
@@ -482,6 +545,63 @@ export const copy = {
       },
     ],
     privacyContactCta: 'Back to download',
+    termsKicker: 'Terms of Service',
+    termsTitle: 'Read these terms before you use ZoneBox.',
+    termsIntro:
+      'By downloading, installing, using, or buying ZoneBox, you agree to these Terms. ZoneBox is a macOS menu-bar window layout app provided by Wyman. When you buy through this site, Creem is the Merchant of Record for payment, invoices, and tax.',
+    termsUpdated: 'Last updated: 7 September 2026',
+    termsFacts: ['Snapping stays free', 'Pro is a one-time license for this version', 'One key activates 2 Macs', 'Creem handles checkout'],
+    termsSections: [
+      {
+        title: 'Scope',
+        body: 'These Terms cover the ZoneBox website, installer, and macOS app. If you do not agree, do not download or use ZoneBox.',
+      },
+      {
+        title: 'Publisher and checkout',
+        body: 'The ZoneBox software is provided by Wyman and is proprietary. When you buy ZoneBox Pro on this site, Creem (Armitage Labs OÜ) acts as Merchant of Record for payment, invoices, and tax. Purchases are also subject to Creem Buyer Terms: https://www.creem.io/buyer-terms',
+      },
+      {
+        title: 'License',
+        body: 'We grant you a personal, non-exclusive, non-transferable license to install and use ZoneBox on Macs you own or control. You may not resell, sublicense, or publicly redistribute the installer, and you may not share, sell, or lend license keys.',
+      },
+      {
+        title: 'Free, trial, and Pro',
+        body: 'The free app includes the layout editor, Shift / right-click-drag snapping, numbered zone hotkeys, and divider handles. New installs include a 14-day Pro trial. ZoneBox Pro is a one-time license for the purchased version, works on 2 Macs, and unlocks workspaces, title-bar hover pin, and Quick Snapper. After the trial, Pro features need a license; snapping and layouts stay free.',
+      },
+      {
+        title: 'Price and activation',
+        body: 'The current price is US$14.99, or US$9.99 for the first 30 days. After payment, Creem emails a license key and this site can show it on the success page. Activate it in ZoneBox Settings -> License. Activation sends the key and an anonymous device identifier to Creem. Window contents and layouts are not uploaded.',
+      },
+      {
+        title: 'Refunds',
+        body: 'Within 14 days of purchase, you may request a refund if ZoneBox will not run on a supported Mac (macOS 14 or later, Apple Silicon or Intel) or a valid license will not activate. Refunds are processed by Creem. After 14 days, purchases are final except where law or Creem requires otherwise. Contact us using the details published on this site and on your payment receipt before filing a chargeback.',
+      },
+      {
+        title: 'Acceptable use',
+        body: 'ZoneBox requires macOS 14 or later. Moving windows that belong to other apps requires Accessibility in System Settings. Features such as pin preview may also request Screen Recording. Do not bypass license checks, and do not use the app for unlawful purposes.',
+      },
+      {
+        title: 'Disclaimer',
+        body: 'ZoneBox is provided as is. Window snapping depends on macOS and other apps, and it may not work as expected in environments such as Stage Manager. We do not warrant uninterrupted or error-free operation.',
+      },
+      {
+        title: 'Limitation of liability',
+        body: 'To the extent permitted by law, we are not liable for indirect damages, lost data, or lost profits. For a paid ZoneBox Pro license, our liability is limited to the amount you paid for that license.',
+      },
+      {
+        title: 'Privacy',
+        body: 'For local data, system permissions, and license checks, read the privacy page on this site.',
+      },
+      {
+        title: 'Changes',
+        body: 'We may update these Terms by posting a new version on this page. Continued use of ZoneBox after the update date means you accept the new Terms.',
+      },
+      {
+        title: 'Contact',
+        body: 'For questions about these Terms, licenses, or refunds, use the contact details published on this site and on your Creem payment receipt. Payment-processing questions can also go to Creem.',
+      },
+    ],
+    termsPrivacyCta: 'Read the privacy page',
     backHome: 'Back to home',
     successTitle: 'Your license key is ready.',
     successBody: 'Paste the key in ZoneBox Settings → License, or activate this Mac with the button below.',

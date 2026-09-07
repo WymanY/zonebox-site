@@ -51,6 +51,9 @@ export function SiteHeader({
           <Link href="/privacy" className={navLink}>
             {t.navPrivacy}
           </Link>
+          <Link href="/terms" className={navLink}>
+            {t.navTerms}
+          </Link>
           <span className="mx-1 hidden h-5 w-px bg-border sm:block" />
           <LanguageToggle lang={lang} label={t.langSwitch} ariaLabel={t.langAria} />
           <ThemeToggle
@@ -107,6 +110,12 @@ export function SiteFooter({ t }: { t: Copy }) {
             className="rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-foreground"
           >
             {t.footerPrivacy}
+          </Link>
+          <Link
+            href="/terms"
+            className="rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-foreground"
+          >
+            {t.footerTerms}
           </Link>
           <a
             href={DOWNLOAD_DMG}

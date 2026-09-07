@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 
 import { buttonVariants } from '@/components/ui/button';
 import { BUY_URL, DOWNLOAD_DMG, type Copy } from '@/lib/copy';
@@ -56,6 +57,11 @@ export function PricingSection({ t }: { t: Copy }) {
             {t.pricingCta}
           </a>
           <p className="mt-4 text-[13px] text-muted-foreground">{t.pricingFine}</p>
+          <p className="mt-2 text-[13px] text-muted-foreground">
+            <Link href="/terms" className="underline-offset-4 hover:text-foreground hover:underline">
+              {t.pricingTerms}
+            </Link>
+          </p>
         </article>
       </div>
     </section>
