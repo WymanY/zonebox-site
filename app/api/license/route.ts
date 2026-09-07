@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
 
+import { creemConfig, creemFetch } from '@/lib/creem';
+
 const ALLOWED = new Set(['activate', 'validate', 'deactivate']);
 
 export async function POST(request: Request) {
-  const apiKey = process.env.CREEM_API_KEY;
+  const { apiKey } = creemConfig();
   if (!apiKey) {
     return NextResponse.json({ error: 'not_configured' }, { status: 503 });
   }
@@ -24,25 +26,28 @@ export async function POST(request: Request) {
   if (!action || !ALLOWED.has(action) || !body.key) {
     return NextResponse.json({ error: 'bad_request' }, { status: 400 });
   }
+  if (action === 'activate' && !body.instance_name) {
+    return NextResponse.json({ error: 'bad_request' }, { status: 400 });
+  }
+  if (action !== 'activate' && !body.instance_id) {
+    return NextResponse.json({ error: 'bad_request' }, { status: 400 });
+  }
 
   const payload =
     action === 'activate'
       ? { key: body.key, instance_name: body.instance_name }
       : { key: body.key, instance_id: body.instance_id };
 
-  const base =
-    process.env.CREEM_API_BASE ??
-    (apiKey.startsWith('creem_test_') ? 'https://test-api.creem.io' : 'https://api.creem.io');
-  const response = await fetch(`${base}/v1/licenses/${action}`, {
-    method: 'POST',
-    headers: {
-      accept: 'application/json',
-      'content-type': 'application/json',
-      'x-api-key': apiKey,
-    },
-    body: JSON.stringify(payload),
-  });
-
-  const json = await response.json().catch(() => ({ error: 'invalid_response' }));
-  return NextResponse.json(json, { status: response.status });
+  try {
+    const { response, json } = await creemFetch(`/v1/licenses/${action}`, {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    return NextResponse.json(json, { status: response.status });
+  } catch (error) {
+    if (error instanceof Error && error.message === 'not_configured') {
+      return NextResponse.json({ error: 'not_configured' }, { status: 503 });
+    }
+    return NextResponse.json({ error: 'network' }, { status: 502 });
+  }
 }

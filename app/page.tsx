@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation';
 import {
   Apple,
   ArrowUpRight,
@@ -13,6 +14,7 @@ import {
 } from 'lucide-react';
 
 import { GuidePanel } from '@/components/guide-panel';
+import { PricingSection } from '@/components/pricing-section';
 import { HeroStage } from '@/components/hero-stage';
 import { ZoneBoxGlyph } from '@/components/mock-display';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
@@ -34,7 +36,18 @@ const outlineButton = cn(
   'h-11 rounded-xl bg-card/60 px-5 text-[15px] backdrop-blur',
 );
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ status?: string; checkout_id?: string }>;
+}) {
+  const params = await searchParams;
+  if (params.checkout_id) {
+    redirect('/success?checkout_id=' + encodeURIComponent(params.checkout_id));
+  }
+  if (params.status === 'successful') {
+    redirect('/success?status=successful');
+  }
   const { lang, t } = await getCopy();
   const theme = await getThemePreference();
   const metaChips = t.downloadMeta.split(' · ');
@@ -139,7 +152,14 @@ export default async function Home() {
                     <Icon className="size-5" />
                   </span>
                   <div>
-                    <h3 className="text-lg font-semibold tracking-tight">{feature.title}</h3>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-semibold tracking-tight">{feature.title}</h3>
+                      {'badge' in feature && feature.badge ? (
+                        <span className="rounded-full bg-primary/12 px-2 py-0.5 text-[11px] font-semibold tracking-wide text-primary">
+                          {feature.badge}
+                        </span>
+                      ) : null}
+                    </div>
                     <p className="mt-2 text-[15px] leading-7 text-muted-foreground">
                       {feature.body}
                     </p>
@@ -149,6 +169,8 @@ export default async function Home() {
             })}
           </div>
         </section>
+
+        <PricingSection t={t} />
 
         <section className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
           <SectionHeading kicker={t.trustKicker} title={t.trustTitle} />
@@ -195,6 +217,15 @@ export default async function Home() {
                 >
                   <Download />
                   {t.download}
+                </a>
+                <a
+                  href={BUY_URL}
+                  className={cn(
+                    buttonVariants({ variant: 'outline', size: 'lg' }),
+                    'h-11 rounded-xl border-white/20 bg-white/8 px-5 text-[15px] text-white hover:bg-white/14 hover:text-white dark:border-white/20 dark:bg-white/8 dark:hover:bg-white/14',
+                  )}
+                >
+                  {t.buy}
                 </a>
                 <a
                   href={RELEASES_URL}

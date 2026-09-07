@@ -46,6 +46,9 @@ export function SiteHeader({
           <Link href="/#features" className={navLink}>
             {t.navFeatures}
           </Link>
+          <Link href="/#pricing" className={navLink}>
+            {t.navPricing}
+          </Link>
           <Link href="/privacy" className={navLink}>
             {t.navPrivacy}
           </Link>
@@ -60,6 +63,15 @@ export function SiteHeader({
               dark: t.themeDark,
             }}
           />
+          <Link
+            href="/#pricing"
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'sm' }),
+              'ml-1 hidden rounded-lg px-3 sm:inline-flex',
+            )}
+          >
+            {t.navBuy}
+          </Link>
           <a
             href={DOWNLOAD_DMG}
             className={cn(
