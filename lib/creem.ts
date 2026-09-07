@@ -51,14 +51,21 @@ export async function createCheckoutSession() {
   if (!productId) {
     throw new Error('missing_product');
   }
-  const { response, json } = await creemFetch('/v1/checkouts', {
+  const payload = {
+    product_id: productId,
+    success_url: `${siteUrl}/success`,
+    metadata: { source: 'zonebox-site' },
+  };
+  let { response, json } = await creemFetch('/v1/checkouts', {
     method: 'POST',
-    body: JSON.stringify({
-      product_id: productId,
-      success_url: `${siteUrl}/success`,
-      metadata: { source: 'zonebox-site' },
-    }),
+    body: JSON.stringify({ ...payload, discount_code: 'LAUNCH30' }),
   });
+  if (!response.ok) {
+    ({ response, json } = await creemFetch('/v1/checkouts', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    }));
+  }
   if (!response.ok) {
     throw new Error((json.error as string) ?? (json.message as string) ?? 'checkout_failed');
   }
