@@ -4,6 +4,7 @@ export const DOWNLOAD_DMG =
   'https://github.com/WymanY/ZoneBox/releases/download/0.3/ZoneBox-0.3.dmg';
 export const RELEASES_URL = 'https://github.com/WymanY/ZoneBox/releases/latest';
 export const GITHUB_URL = 'https://github.com/WymanY/ZoneBox';
+export const BUY_URL = '/buy';
 
 export const copy = {
   zh: {
@@ -11,6 +12,7 @@ export const copy = {
     navFeatures: '功能',
     navPrivacy: '隐私',
     navDownload: '下载',
+    navBuy: '购买 Pro',
     navGuide: '教程',
     langSwitch: 'EN',
     langAria: 'Switch to English',
@@ -23,6 +25,7 @@ export const copy = {
     heroBody:
       'ZoneBox 常驻时钟旁边，没有 Dock 图标。拖一下或按个快捷键，窗口就吸附进编号分区。',
     download: '下载 0.3',
+    buy: '购买 Pro',
     downloadMeta: 'macOS 14+ · Apple Silicon 与 Intel · 已公证',
     otherRelease: '查看 GitHub Release',
     heroLayoutLabel: '布局 · 三栏',
@@ -167,8 +170,8 @@ export const copy = {
     privacyKicker: '隐私',
     privacyTitle: '一切都留在这台 Mac 上。',
     privacyIntro:
-      'ZoneBox 是装在你 Mac 上的菜单栏应用。它要移动窗口，所以需要辅助功能权限。它不设账号，也不把窗口内容送到网上。',
-    privacyFacts: ['数据只存本机', '没有账号', '没有遥测', '下载走 GitHub'],
+      'ZoneBox 是装在你 Mac 上的菜单栏应用。它要移动窗口，所以需要辅助功能权限。布局仍留在本机。购买 Pro 时，授权码会发到 Creem 做激活校验。',
+    privacyFacts: ['布局留在本机', '没有 ZoneBox 账号', '没有使用遥测', '授权校验走 Creem'],
     privacyStage: {
       window: '隐私与安全性',
       hint: '允许下列应用控制你的电脑。',
@@ -197,8 +200,13 @@ export const copy = {
       },
       {
         tag: '无',
-        title: '没有账号和遥测',
-        body: '没有登录、没有云同步、没有使用统计。下载走 GitHub Release，不经过 ZoneBox 自己的服务器。',
+        title: '没有 ZoneBox 账号和遥测',
+        body: '没有登录、没有云同步、没有使用统计。下载走 GitHub Release。',
+      },
+      {
+        tag: '付费',
+        title: '授权激活',
+        body: '购买 ZoneBox Pro 后，激活会把授权码和匿名设备标识发到 Creem。不上传窗口内容、布局或辅助功能数据。',
       },
       {
         tag: 'GitHub',
@@ -214,6 +222,7 @@ export const copy = {
     navFeatures: 'Features',
     navPrivacy: 'Privacy',
     navDownload: 'Download',
+    navBuy: 'Buy Pro',
     navGuide: 'Guide',
     langSwitch: '中文',
     langAria: '切换到中文',
@@ -226,6 +235,7 @@ export const copy = {
     heroBody:
       'ZoneBox lives next to the clock. There is no Dock icon. Drag a window or press a key, and it lands in a numbered zone.',
     download: 'Download 0.3',
+    buy: 'Buy Pro',
     downloadMeta: 'macOS 14+ · Apple Silicon and Intel · notarized',
     otherRelease: 'GitHub Release',
     heroLayoutLabel: 'Layout · Columns',
@@ -370,8 +380,8 @@ export const copy = {
     privacyKicker: 'Privacy',
     privacyTitle: 'Everything stays on this Mac.',
     privacyIntro:
-      'ZoneBox is a menu-bar app on your Mac. It needs Accessibility because it moves windows. It has no accounts and does not send window contents to a server.',
-    privacyFacts: ['Local data only', 'No accounts', 'No telemetry', 'Downloads via GitHub'],
+      'ZoneBox is a menu-bar app on your Mac. It needs Accessibility because it moves windows. Layouts stay on this Mac. Activating Pro sends a license key to Creem for validation.',
+    privacyFacts: ['Layouts stay local', 'No ZoneBox account', 'No usage telemetry', 'License checks go through Creem'],
     privacyStage: {
       window: 'Privacy & Security',
       hint: 'Allow the apps below to control your computer.',
@@ -400,8 +410,13 @@ export const copy = {
       },
       {
         tag: 'None',
-        title: 'No accounts, no telemetry',
-        body: 'There is no sign-in, no cloud sync, and no usage analytics. Downloads come from GitHub Releases, not a ZoneBox server.',
+        title: 'No ZoneBox account or telemetry',
+        body: 'There is no sign-in, no cloud sync, and no usage analytics. Downloads come from GitHub Releases.',
+      },
+      {
+        tag: 'Paid',
+        title: 'License activation',
+        body: 'Buying ZoneBox Pro sends the license key and an anonymous device identifier to Creem. Window contents, layouts, and Accessibility data stay on this Mac.',
       },
       {
         tag: 'GitHub',

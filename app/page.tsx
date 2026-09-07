@@ -17,7 +17,7 @@ import { HeroStage } from '@/components/hero-stage';
 import { ZoneBoxGlyph } from '@/components/mock-display';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
 import { buttonVariants } from '@/components/ui/button';
-import { DOWNLOAD_DMG, RELEASES_URL } from '@/lib/copy';
+import { BUY_URL, DOWNLOAD_DMG, RELEASES_URL } from '@/lib/copy';
 import { getCopy, getThemePreference } from '@/lib/language';
 import { cn } from '@/lib/utils';
 
@@ -68,6 +68,9 @@ export default async function Home() {
               <a href={DOWNLOAD_DMG} className={primaryButton}>
                 <Download />
                 {t.download}
+              </a>
+              <a href={BUY_URL} className={outlineButton}>
+                {t.buy}
               </a>
               <a href={RELEASES_URL} className={outlineButton}>
                 {t.otherRelease}
