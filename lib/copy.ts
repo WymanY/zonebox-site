@@ -1,9 +1,6 @@
 export type Lang = 'zh' | 'en';
 
-export const DOWNLOAD_DMG =
-  'https://github.com/WymanY/ZoneBox/releases/download/0.3/ZoneBox-0.3.dmg';
-export const RELEASES_URL = 'https://github.com/WymanY/ZoneBox/releases/latest';
-export const GITHUB_URL = 'https://github.com/WymanY/ZoneBox';
+export const DOWNLOAD_DMG = '/downloads/ZoneBox-0.4.dmg';
 export const BUY_URL = '/buy';
 
 export const copy = {
@@ -25,10 +22,10 @@ export const copy = {
     heroTitle: '在屏幕上划出分区，窗口落到该去的地方。',
     heroBody:
       'ZoneBox 常驻时钟旁边，没有 Dock 图标。拖一下或按个快捷键，窗口就吸附进编号分区。',
-    download: '下载 0.3',
+    download: '下载 0.4',
     buy: '购买 Pro',
     downloadMeta: 'macOS 14+ · Apple Silicon 与 Intel · 已公证',
-    otherRelease: '查看 GitHub Release',
+    otherRelease: '查看下载说明',
     heroLayoutLabel: '布局 · 三栏',
     stepsKicker: '上手',
     guideKicker: '教程',
@@ -158,7 +155,7 @@ export const copy = {
       },
       {
         title: 'Developer ID + 公证',
-        body: '当前 0.3 是通用二进制直装包，Apple Silicon 和 Intel 都能用，拖进“应用程序”即可。',
+        body: '当前 0.4 是通用二进制直装包，Apple Silicon 和 Intel 都能用，拖进“应用程序”即可。',
       },
       {
         title: '数据留在本机',
@@ -189,10 +186,10 @@ export const copy = {
     pricingCta: '购买 Pro',
     pricingFine: '由 Creem 收款并开具发票。授权码会发到邮箱，同一授权可用于 2 台 Mac。前 30 天以 9.99 美元出售。',
     ctaTitle: '把窗口放进自己的格子里',
-    ctaBody: '下载公证过的 0.3，装完先走一遍欢迎引导。14 天内可以试用 Pro。',
+    ctaBody: '下载公证过的 0.4，装完先走一遍欢迎引导。14 天内可以试用 Pro。',
     footerPrivacy: '隐私',
-    footerGithub: 'GitHub',
-    footerNote: '© 2026 Wyman. 0.3 同时支持 Apple Silicon 和 Intel。',
+    footerGithub: '下载',
+    footerNote: '© 2026 Wyman. 0.4 同时支持 Apple Silicon 和 Intel。',
     privacyKicker: '隐私',
     privacyTitle: '一切都留在这台 Mac 上。',
     privacyIntro:
@@ -227,7 +224,7 @@ export const copy = {
       {
         tag: '无',
         title: '没有 ZoneBox 账号和遥测',
-        body: '没有登录、没有云同步、没有使用统计。下载走 GitHub Release。',
+        body: '没有登录、没有云同步、没有使用统计。安装包从本站直接下载。',
       },
       {
         tag: '付费',
@@ -235,12 +232,12 @@ export const copy = {
         body: '购买 ZoneBox Pro 后，激活会把授权码和匿名设备标识发到 Creem。不上传窗口内容、布局或辅助功能数据。',
       },
       {
-        tag: 'GitHub',
+        tag: '联系',
         title: '联系',
-        body: '有问题可以在 GitHub 仓库提 issue。',
+        body: '购买或授权问题请查收 Creem 收据邮件，或回到首页重新下载安装包。',
       },
     ],
-    privacyContactCta: '去 GitHub 提 issue',
+    privacyContactCta: '返回首页下载',
     backHome: '返回首页',
     successTitle: '授权码已经就绪。',
     successBody: '把授权码粘进 ZoneBox 的设置 → 许可，或点下面的按钮在这台 Mac 上激活。',
@@ -269,10 +266,10 @@ export const copy = {
     heroTitle: 'Draw zones. Snap windows into them.',
     heroBody:
       'ZoneBox lives next to the clock. There is no Dock icon. Drag a window or press a key, and it lands in a numbered zone.',
-    download: 'Download 0.3',
+    download: 'Download 0.4',
     buy: 'Buy Pro',
     downloadMeta: 'macOS 14+ · Apple Silicon and Intel · notarized',
-    otherRelease: 'GitHub Release',
+    otherRelease: 'Download notes',
     heroLayoutLabel: 'Layout · Columns',
     stepsKicker: 'Getting started',
     guideKicker: 'Guide',
@@ -402,7 +399,7 @@ export const copy = {
       },
       {
         title: 'Developer ID + notarized',
-        body: '0.3 is a universal disk image for Apple Silicon and Intel. Drag ZoneBox.app into Applications.',
+        body: '0.4 is a universal disk image for Apple Silicon and Intel. Drag ZoneBox.app into Applications.',
       },
       {
         title: 'Stays on the Mac',
@@ -433,10 +430,10 @@ export const copy = {
     pricingCta: 'Buy Pro',
     pricingFine: 'Creem handles checkout and invoices. The license key is emailed and works on 2 Macs. Launch pricing is US$9.99 for 30 days.',
     ctaTitle: 'Put windows in their places',
-    ctaBody: 'Download notarized 0.3, walk through the welcome tour, and try Pro for 14 days.',
+    ctaBody: 'Download notarized 0.4, walk through the welcome tour, and try Pro for 14 days.',
     footerPrivacy: 'Privacy',
-    footerGithub: 'GitHub',
-    footerNote: '© 2026 Wyman. 0.3 covers Apple Silicon and Intel.',
+    footerGithub: '下载',
+    footerNote: '© 2026 Wyman. 0.4 covers Apple Silicon and Intel.',
     privacyKicker: 'Privacy',
     privacyTitle: 'Everything stays on this Mac.',
     privacyIntro:
@@ -471,7 +468,7 @@ export const copy = {
       {
         tag: 'None',
         title: 'No ZoneBox account or telemetry',
-        body: 'There is no sign-in, no cloud sync, and no usage analytics. Downloads come from GitHub Releases.',
+        body: 'There is no sign-in, no cloud sync, and no usage analytics. The installer is downloaded from this site.',
       },
       {
         tag: 'Paid',
@@ -479,12 +476,12 @@ export const copy = {
         body: 'Buying ZoneBox Pro sends the license key and an anonymous device identifier to Creem. Window contents, layouts, and Accessibility data stay on this Mac.',
       },
       {
-        tag: 'GitHub',
+        tag: 'Contact',
         title: 'Contact',
-        body: 'Open an issue on the GitHub repository.',
+        body: 'For purchase or license questions, check the Creem receipt email, or download the installer again from the homepage.',
       },
     ],
-    privacyContactCta: 'Open an issue on GitHub',
+    privacyContactCta: 'Back to download',
     backHome: 'Back to home',
     successTitle: 'Your license key is ready.',
     successBody: 'Paste the key in ZoneBox Settings → License, or activate this Mac with the button below.',

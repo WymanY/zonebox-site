@@ -1,4 +1,4 @@
-import { ArrowUpRight, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,7 +7,6 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { buttonVariants } from '@/components/ui/button';
 import {
   DOWNLOAD_DMG,
-  GITHUB_URL,
   type Copy,
   type Lang,
 } from '@/lib/copy';
@@ -110,11 +109,10 @@ export function SiteFooter({ t }: { t: Copy }) {
             {t.footerPrivacy}
           </Link>
           <a
-            href={GITHUB_URL}
+            href={DOWNLOAD_DMG}
             className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-foreground"
           >
-            {t.footerGithub}
-            <ArrowUpRight className="size-3.5" />
+            {t.navDownload}
           </a>
         </div>
       </div>

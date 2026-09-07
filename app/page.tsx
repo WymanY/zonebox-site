@@ -1,7 +1,6 @@
 import { redirect } from 'next/navigation';
 import {
   Apple,
-  ArrowUpRight,
   BadgeCheck,
   Download,
   Grid2x2,
@@ -19,7 +18,7 @@ import { HeroStage } from '@/components/hero-stage';
 import { ZoneBoxGlyph } from '@/components/mock-display';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
 import { buttonVariants } from '@/components/ui/button';
-import { BUY_URL, DOWNLOAD_DMG, RELEASES_URL } from '@/lib/copy';
+import { BUY_URL, DOWNLOAD_DMG } from '@/lib/copy';
 import { getCopy, getThemePreference } from '@/lib/language';
 import { cn } from '@/lib/utils';
 
@@ -84,10 +83,6 @@ export default async function Home({
               </a>
               <a href={BUY_URL} className={outlineButton}>
                 {t.buy}
-              </a>
-              <a href={RELEASES_URL} className={outlineButton}>
-                {t.otherRelease}
-                <ArrowUpRight />
               </a>
             </div>
             <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-[13px] text-muted-foreground">
@@ -226,16 +221,6 @@ export default async function Home({
                   )}
                 >
                   {t.buy}
-                </a>
-                <a
-                  href={RELEASES_URL}
-                  className={cn(
-                    buttonVariants({ variant: 'outline', size: 'lg' }),
-                    'h-11 rounded-xl border-white/20 bg-white/8 px-5 text-[15px] text-white hover:bg-white/14 hover:text-white dark:border-white/20 dark:bg-white/8 dark:hover:bg-white/14',
-                  )}
-                >
-                  {t.otherRelease}
-                  <ArrowUpRight />
                 </a>
               </div>
               <p className="mt-4 text-[13px] text-white/55">{t.downloadMeta}</p>

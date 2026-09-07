@@ -1,7 +1,6 @@
 import {
   Accessibility,
   ArrowLeft,
-  ArrowUpRight,
   Check,
   HardDrive,
   MessageSquare,
@@ -14,7 +13,7 @@ import Link from 'next/link';
 import { PrivacyStage } from '@/components/privacy-stage';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
 import { buttonVariants } from '@/components/ui/button';
-import { GITHUB_URL } from '@/lib/copy';
+import { DOWNLOAD_DMG } from '@/lib/copy';
 import { getCopy, getThemePreference } from '@/lib/language';
 import { cn } from '@/lib/utils';
 
@@ -106,14 +105,13 @@ export default async function PrivacyPage() {
             </div>
           </div>
           <a
-            href={GITHUB_URL}
+            href={DOWNLOAD_DMG}
             className={cn(
               buttonVariants({ variant: 'outline', size: 'lg' }),
               'h-10 shrink-0 rounded-xl bg-card/60 px-4 backdrop-blur',
             )}
           >
             {t.privacyContactCta}
-            <ArrowUpRight />
           </a>
         </section>
 
