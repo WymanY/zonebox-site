@@ -1,10 +1,10 @@
+/* oxlint-disable next/no-html-link-for-pages -- Native navigation avoids the vinext Link runtime failure. */
 import {
   ArrowLeft,
   Check,
   FileText,
   ShieldCheck,
 } from 'lucide-react';
-import Link from 'next/link';
 
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
 import { buttonVariants } from '@/components/ui/button';
@@ -73,7 +73,7 @@ export default async function TermsPage() {
         </section>
 
         <div className="mt-6 max-w-3xl">
-          <Link
+          <a
             href="/privacy"
             className={cn(
               buttonVariants({ variant: 'outline', size: 'lg' }),
@@ -82,17 +82,17 @@ export default async function TermsPage() {
           >
             <ShieldCheck className="size-4" />
             {t.termsPrivacyCta}
-          </Link>
+          </a>
         </div>
 
         <p className="mt-10">
-          <Link
+          <a
             href="/"
             className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
           >
             <ArrowLeft className="size-4" />
             {t.backHome}
-          </Link>
+          </a>
         </p>
       </main>
       <SiteFooter t={t} />

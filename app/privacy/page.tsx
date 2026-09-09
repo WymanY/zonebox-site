@@ -1,3 +1,4 @@
+/* oxlint-disable next/no-html-link-for-pages -- Native navigation avoids the vinext Link runtime failure. */
 import {
   Accessibility,
   ArrowLeft,
@@ -8,7 +9,6 @@ import {
   ShieldCheck,
   type LucideIcon,
 } from 'lucide-react';
-import Link from 'next/link';
 
 import { PrivacyStage } from '@/components/privacy-stage';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
@@ -116,13 +116,13 @@ export default async function PrivacyPage() {
         </section>
 
         <p className="mt-10">
-          <Link
+          <a
             href="/"
             className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
           >
             <ArrowLeft className="size-4" />
             {t.backHome}
-          </Link>
+          </a>
         </p>
       </main>
       <SiteFooter t={t} />

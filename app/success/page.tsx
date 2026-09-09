@@ -1,5 +1,5 @@
+/* oxlint-disable next/no-html-link-for-pages -- Native navigation avoids the vinext Link runtime failure. */
 import { ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
 
 import { LicenseKeyCard } from '@/components/license-key-card';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
@@ -62,9 +62,9 @@ export default async function SuccessPage({
         ) : null}
         <p className="mt-6 text-sm leading-6 text-muted-foreground">{t.successEmail}</p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/" className={cn(buttonVariants({ size: 'lg' }), 'h-11 rounded-xl px-5 text-[15px]')}>
+          <a href="/" className={cn(buttonVariants({ size: 'lg' }), 'h-11 rounded-xl px-5 text-[15px]')}>
             {t.backHome}
-          </Link>
+          </a>
           {state !== 'ok' ? (
             <a
               href={BUY_URL}

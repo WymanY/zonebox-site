@@ -1,6 +1,6 @@
+/* oxlint-disable next/no-html-link-for-pages -- Native navigation avoids the vinext Link runtime failure. */
 import { Download } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { LanguageToggle } from '@/components/language-toggle';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -28,7 +28,7 @@ export function SiteHeader({
   return (
     <header className="sticky top-0 z-40 px-3 pt-3 sm:px-5">
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between rounded-2xl border border-border/70 bg-background/75 px-3 shadow-[0_1px_0_color-mix(in_oklch,white_50%,transparent)_inset,0_8px_30px_-16px_color-mix(in_oklch,var(--foreground)_30%,transparent)] backdrop-blur-xl sm:px-4 dark:shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_10px_40px_-20px_rgba(0,0,0,0.8)]">
-        <Link href="/" className="flex items-center gap-2.5 text-foreground">
+        <a href="/" className="flex items-center gap-2.5 text-foreground">
           <Image
             src="/icon.png"
             alt=""
@@ -37,23 +37,23 @@ export function SiteHeader({
             className="size-8 rounded-[9px] shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_4px_12px_-4px_rgba(0,122,255,0.6)]"
           />
           <span className="text-[15px] font-semibold tracking-tight">{t.brand}</span>
-        </Link>
+        </a>
         <nav className="flex items-center gap-1">
-          <Link href="/#guide" className={navLink}>
+          <a href="/#guide" className={navLink}>
             {t.navGuide}
-          </Link>
-          <Link href="/#features" className={navLink}>
+          </a>
+          <a href="/#features" className={navLink}>
             {t.navFeatures}
-          </Link>
-          <Link href="/#pricing" className={navLink}>
+          </a>
+          <a href="/#pricing" className={navLink}>
             {t.navPricing}
-          </Link>
-          <Link href="/privacy" className={navLink}>
+          </a>
+          <a href="/privacy" className={navLink}>
             {t.navPrivacy}
-          </Link>
-          <Link href="/terms" className={navLink}>
+          </a>
+          <a href="/terms" className={navLink}>
             {t.navTerms}
-          </Link>
+          </a>
           <span className="mx-1 hidden h-5 w-px bg-border sm:block" />
           <LanguageToggle lang={lang} label={t.langSwitch} ariaLabel={t.langAria} />
           <ThemeToggle
@@ -65,7 +65,7 @@ export function SiteHeader({
               dark: t.themeDark,
             }}
           />
-          <Link
+          <a
             href="/#pricing"
             className={cn(
               buttonVariants({ variant: 'outline', size: 'sm' }),
@@ -73,7 +73,7 @@ export function SiteHeader({
             )}
           >
             {t.navBuy}
-          </Link>
+          </a>
           <a
             href={DOWNLOAD_DMG}
             className={cn(
@@ -105,18 +105,18 @@ export function SiteFooter({ t }: { t: Copy }) {
           <p>{t.footerNote}</p>
         </div>
         <div className="flex items-center gap-1">
-          <Link
+          <a
             href="/privacy"
             className="rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-foreground"
           >
             {t.footerPrivacy}
-          </Link>
-          <Link
+          </a>
+          <a
             href="/terms"
             className="rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-foreground"
           >
             {t.footerTerms}
-          </Link>
+          </a>
           <a
             href={DOWNLOAD_DMG}
             className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-foreground"
