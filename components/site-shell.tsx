@@ -7,6 +7,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { buttonVariants } from '@/components/ui/button';
 import {
   DOWNLOAD_DMG,
+  SUPPORT_EMAIL,
   type Copy,
   type Lang,
 } from '@/lib/copy';
@@ -116,6 +117,12 @@ export function SiteFooter({ t }: { t: Copy }) {
             className="rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-foreground"
           >
             {t.footerTerms}
+          </a>
+          <a
+            href={`mailto:${SUPPORT_EMAIL}`}
+            className="rounded-lg px-3 py-1.5 transition-colors hover:bg-muted hover:text-foreground"
+          >
+            {SUPPORT_EMAIL}
           </a>
           <a
             href={DOWNLOAD_DMG}

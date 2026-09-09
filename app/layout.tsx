@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://zonebox.top'),
   title: 'ZoneBox',
   description:
     '在屏幕上划出分区，拖一下或按个快捷键，窗口就吸附进去。原生 macOS 菜单栏应用，支持 macOS 14，Apple Silicon 与 Intel。',

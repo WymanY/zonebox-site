@@ -2,6 +2,7 @@ export type Lang = 'zh' | 'en';
 
 export const DOWNLOAD_DMG = '/downloads/ZoneBox-0.4.dmg';
 export const BUY_URL = '/buy';
+export const SUPPORT_EMAIL = 'support@zonebox.top';
 
 export const copy = {
   zh: {
@@ -237,7 +238,7 @@ export const copy = {
       {
         tag: '联系',
         title: '联系',
-        body: '购买或授权问题请查收 Creem 收据邮件，或回到首页重新下载安装包。',
+        body: '购买、授权或退款问题请发邮件到 support@zonebox.top。也可以查收 Creem 收据邮件，或回到首页重新下载安装包。',
       },
     ],
     privacyContactCta: '返回首页下载',
@@ -270,7 +271,7 @@ export const copy = {
       },
       {
         title: '退款',
-        body: '购买后 14 天内，如果你无法在受支持的 Mac（macOS 14 或更高版本，Apple Silicon 或 Intel）上运行 ZoneBox，或有效授权无法激活，可以申请退款。退款由 Creem 处理。14 天之后，除法律或 Creem 另行要求外，购买一般不予退款。请先通过本站公布的联系方式和付款收据联系，而不是直接向银行拒付。',
+        body: '购买后 14 天内，如果你无法在受支持的 Mac（macOS 14 或更高版本，Apple Silicon 或 Intel）上运行 ZoneBox，或有效授权无法激活，可以申请退款。退款由 Creem 处理。14 天之后，除法律或 Creem 另行要求外，购买一般不予退款。请先发邮件到 support@zonebox.top，并附上付款收据，而不是直接向银行拒付。',
       },
       {
         title: '使用规则',
@@ -294,7 +295,7 @@ export const copy = {
       },
       {
         title: '联系',
-        body: '条款、授权或退款问题，请使用本站公布的联系方式，以及 Creem 付款收据上的联系信息。付款处理问题也可以直接联系 Creem。',
+        body: '条款、授权或退款问题请发邮件到 support@zonebox.top，也可使用 Creem 付款收据上的联系信息。付款处理问题也可以直接联系 Creem。',
       },
     ],
     termsPrivacyCta: '阅读隐私说明',
@@ -541,7 +542,7 @@ export const copy = {
       {
         tag: 'Contact',
         title: 'Contact',
-        body: 'For purchase or license questions, check the Creem receipt email, or download the installer again from the homepage.',
+        body: 'For purchase, license, or refund questions, email support@zonebox.top. You can also check the Creem receipt email, or download the installer again from the homepage.',
       },
     ],
     privacyContactCta: 'Back to download',
@@ -574,7 +575,7 @@ export const copy = {
       },
       {
         title: 'Refunds',
-        body: 'Within 14 days of purchase, you may request a refund if ZoneBox will not run on a supported Mac (macOS 14 or later, Apple Silicon or Intel) or a valid license will not activate. Refunds are processed by Creem. After 14 days, purchases are final except where law or Creem requires otherwise. Contact us using the details published on this site and on your payment receipt before filing a chargeback.',
+        body: 'Within 14 days of purchase, you may request a refund if ZoneBox will not run on a supported Mac (macOS 14 or later, Apple Silicon or Intel) or a valid license will not activate. Refunds are processed by Creem. After 14 days, purchases are final except where law or Creem requires otherwise. Email support@zonebox.top with your payment receipt before filing a chargeback.',
       },
       {
         title: 'Acceptable use',
@@ -598,7 +599,7 @@ export const copy = {
       },
       {
         title: 'Contact',
-        body: 'For questions about these Terms, licenses, or refunds, use the contact details published on this site and on your Creem payment receipt. Payment-processing questions can also go to Creem.',
+        body: 'For questions about these Terms, licenses, or refunds, email support@zonebox.top. You can also use the contact details on your Creem payment receipt. Payment-processing questions can also go to Creem.',
       },
     ],
     termsPrivacyCta: 'Read the privacy page',

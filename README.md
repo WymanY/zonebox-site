@@ -1,6 +1,8 @@
 # ZoneBox site
 
-Product site for ZoneBox. Live at https://zonebox-site.wuyun768.workers.dev.
+Product site for ZoneBox. Production domain: https://zonebox.top.
+
+Cloudflare Workers address: https://zonebox-site.wuyun768.workers.dev.
 
 The previous Vercel URL is still up at https://zonebox-site.vercel.app until it is taken down on purpose.
 

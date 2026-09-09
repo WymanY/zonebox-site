@@ -19,7 +19,7 @@ export function creemConfig(): CreemConfig {
   const siteUrl =
     process.env.SITE_URL ??
     process.env.NEXT_PUBLIC_SITE_URL ??
-    'https://zonebox-site.vercel.app';
+    'https://zonebox.top';
   return { apiKey, apiBase: apiBase.replace(/\/$/, ''), checkoutUrl, productId, siteUrl };
 }
 
