@@ -13,7 +13,7 @@ import {
 import { PrivacyStage } from '@/components/privacy-stage';
 import { SiteFooter, SiteHeader } from '@/components/site-shell';
 import { buttonVariants } from '@/components/ui/button';
-import { DOWNLOAD_DMG } from '@/lib/copy';
+import { DOWNLOAD_DMG, SUPPORT_EMAIL } from '@/lib/copy';
 import { getCopy, getThemePreference } from '@/lib/language';
 import { cn } from '@/lib/utils';
 
@@ -102,6 +102,12 @@ export default async function PrivacyPage() {
             <div>
               <h2 className="text-lg font-semibold tracking-tight">{contact.title}</h2>
               <p className="mt-1 text-[15px] leading-7 text-muted-foreground">{contact.body}</p>
+              <a
+                href={`mailto:${SUPPORT_EMAIL}`}
+                className="mt-2 inline-flex text-[15px] font-medium text-primary hover:underline"
+              >
+                {SUPPORT_EMAIL}
+              </a>
             </div>
           </div>
           <a

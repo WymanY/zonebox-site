@@ -7,6 +7,10 @@
   "main": "vinext/server/fetch-handler",
   "workers_dev": true,
   "preview_urls": true,
+  "routes": [
+    { "pattern": "zonebox.top", "custom_domain": true },
+    { "pattern": "www.zonebox.top", "custom_domain": true }
+  ],
   "assets": {
     "directory": "dist/client",
     "not_found_handling": "none",
