@@ -26,14 +26,14 @@ const icons = {
 export function GuidePanel({ t }: { t: Copy }) {
   return (
     <Tabs defaultValue={t.guides[0].id} className="gap-8">
-      <TabsList className="h-auto w-full flex-wrap justify-start gap-1 rounded-2xl border bg-muted/60 p-1.5 sm:w-fit">
+      <TabsList className="h-auto! w-full max-w-full flex-wrap justify-start gap-1 rounded-2xl border bg-muted/60 p-1.5 group-data-horizontal/tabs:h-auto sm:w-fit sm:max-w-full">
         {t.guides.map((guide, index) => {
           const Icon = icons[guide.id];
           return (
             <TabsTrigger
               key={guide.id}
               value={guide.id}
-              className="h-9 flex-none gap-2 rounded-xl px-3 text-[13px] data-active:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_0_0_1px_var(--border)]"
+              className="h-9 min-h-9 flex-none gap-2 rounded-xl px-3 text-[13px] data-active:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_0_0_1px_var(--border)]"
             >
               <span className="hidden font-mono text-[11px] text-muted-foreground sm:inline">
                 {index + 1}
