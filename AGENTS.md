@@ -23,7 +23,7 @@ Do not edit the app from a website task unless the user explicitly asks. Do not 
 | Welcome-tour copy and first-run flow | `docs/onboarding-design.md` |
 | User-visible English / Chinese strings | `ZoneBox/Domain/L10n.swift` |
 | Layout editor, snap, divider, workspaces, pin | `docs/*.md` plus the matching `L10n.swift` keys |
-| Current download | /downloads/ZoneBox-0.4.dmg on this site |
+| Current download | /downloads/ZoneBox-0.5.dmg on this site |
 
 Site copy lives in `lib/copy.ts`. Keep it aligned with `L10n.swift` instead of rewriting the product.
 
