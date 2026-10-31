@@ -1,6 +1,6 @@
 export type Lang = 'zh' | 'en';
 
-export const DOWNLOAD_DMG = '/downloads/ZoneBox-0.5.3.dmg';
+export const DOWNLOAD_DMG = '/downloads/ZoneBox-0.5.4.dmg';
 export const BUY_URL = '/buy';
 export const SUPPORT_EMAIL = 'support@zonebox.top';
 
@@ -23,8 +23,8 @@ export const copy = {
     heroKicker: 'macOS 菜单栏工具',
     heroTitle: '在屏幕上划出分区，窗口落到该去的地方。',
     heroBody:
-      'ZoneBox 常驻时钟旁边，没有 Dock 图标。拖一下或按个快捷键，窗口就吸附进编号分区。',
-    download: '下载 0.5.3',
+      'ZoneBox 常驻右上角菜单栏，没有 Dock 图标。拖一下或按个快捷键，窗口就吸附进编号分区。',
+    download: '下载 0.5.4',
     buy: '购买 Pro',
     downloadMeta: 'macOS 14+ · Apple Silicon 与 Intel · 已公证',
     otherRelease: '查看下载说明',
@@ -41,11 +41,11 @@ export const copy = {
         id: 'find',
         title: '先找到它',
         kicker: '菜单栏，没有 Dock 图标',
-        why: '装完看起来像没开。它在时钟旁边，左键打开面板，右键打开菜单。',
+        why: '装完看起来像没开。它在右上角菜单栏，左键打开面板，右键打开菜单。',
         steps: [
-          '打开 ZoneBox.app，看菜单栏时钟左边有没有分区图标。',
+          '打开 ZoneBox.app，在右上角菜单栏找到分区图标。',
           '左键点图标打开面板，右键打开菜单。',
-          '第一次会弹出欢迎引导：认识产品、开权限、选布局、试一次吸附。',
+          '第一次会弹出欢迎引导：认识产品、选布局、开权限、试一次吸附。',
         ],
         keys: [],
       },
@@ -104,7 +104,7 @@ export const copy = {
         why: '编码、写作、参考资料可以做成不同方案。回来时窗口按原位归位，不用重新摆。',
         steps: [
           '把常用应用放进各自的分区。',
-          '在菜单栏保存为工作区方案。',
+          '在菜单栏保存为工作区方案；需要保留完全被遮挡的窗口时，先打开“包含遮挡窗口”。',
           '下次用快捷键或菜单把这一组窗口全部召回。',
         ],
         keys: [],
@@ -157,7 +157,7 @@ export const copy = {
       },
       {
         title: 'Developer ID + 公证',
-        body: '当前 0.5.3 是通用二进制直装包，Apple Silicon 和 Intel 都能用，拖进“应用程序”即可。',
+        body: '当前 0.5.4 是通用二进制直装包，Apple Silicon 和 Intel 都能用，拖进“应用程序”即可。',
       },
       {
         title: '数据留在本机',
@@ -189,11 +189,11 @@ export const copy = {
     pricingFine: '由 Creem 收款并开具发票。授权码会发到邮箱，同一授权可用于 2 台 Mac。前 30 天以 9.99 美元出售。',
     pricingTerms: '购买即表示你同意使用条款。',
     ctaTitle: '把窗口放进自己的格子里',
-    ctaBody: '下载公证过的 0.5.3，装完先走一遍欢迎引导。14 天内可以试用 Pro。',
+    ctaBody: '下载公证过的 0.5.4，装完先走一遍欢迎引导。14 天内可以试用 Pro。',
     footerPrivacy: '隐私',
     footerTerms: '使用条款',
     footerGithub: '下载',
-    footerNote: '© 2026 Wyman. 0.5.3 同时支持 Apple Silicon 和 Intel。',
+    footerNote: '© 2026 Wyman. 0.5.4 同时支持 Apple Silicon 和 Intel。',
     privacyKicker: '隐私',
     privacyTitle: '一切都留在这台 Mac 上。',
     privacyIntro:
@@ -327,8 +327,8 @@ export const copy = {
     heroKicker: 'macOS menu-bar utility',
     heroTitle: 'Draw zones. Snap windows into them.',
     heroBody:
-      'ZoneBox lives next to the clock. There is no Dock icon. Drag a window or press a key, and it lands in a numbered zone.',
-    download: 'Download 0.5.3',
+      'ZoneBox lives in the menu bar at the top right. There is no Dock icon. Drag a window or press a key, and it lands in a numbered zone.',
+    download: 'Download 0.5.4',
     buy: 'Buy Pro',
     downloadMeta: 'macOS 14+ · Apple Silicon and Intel · notarized',
     otherRelease: 'Download notes',
@@ -345,11 +345,11 @@ export const copy = {
         id: 'find',
         title: 'Find it first',
         kicker: 'Menu bar, no Dock icon',
-        why: 'After install it can look like nothing launched. It sits next to the clock. Left-click the panel, right-click the menu.',
+        why: 'After install it can look like nothing launched. It sits in the menu bar at the top right. Left-click the panel, right-click the menu.',
         steps: [
-          'Open ZoneBox.app and look just left of the clock for the zone icon.',
+          'Open ZoneBox.app and look for the zone icon in the menu bar at the top right.',
           'Left-click for the panel, right-click for the menu.',
-          'The first launch opens a welcome tour: what it is, Accessibility, a starting layout, and one snap.',
+          'The first launch opens a welcome tour: what it is, a starting layout, Accessibility, and one snap.',
         ],
         keys: [],
       },
@@ -408,7 +408,7 @@ export const copy = {
         why: 'Coding, writing, and research can be separate setups. Come back later and the windows return to their zones.',
         steps: [
           'Place your usual apps into their zones.',
-          'Save that arrangement as a workspace from the menu bar.',
+          'Save that arrangement as a workspace from the menu bar. Turn on “Include covered windows” first if you also want fully covered windows.',
           'Restore it later from the shortcut or the menu.',
         ],
         keys: [],
@@ -461,7 +461,7 @@ export const copy = {
       },
       {
         title: 'Developer ID + notarized',
-        body: '0.5.3 is a universal disk image for Apple Silicon and Intel. Drag ZoneBox.app into Applications.',
+        body: '0.5.4 is a universal disk image for Apple Silicon and Intel. Drag ZoneBox.app into Applications.',
       },
       {
         title: 'Stays on the Mac',
@@ -493,11 +493,11 @@ export const copy = {
     pricingFine: 'Creem handles checkout and invoices. The license key is emailed and works on 2 Macs. Launch pricing is US$9.99 for 30 days.',
     pricingTerms: 'Buying Pro means you agree to the Terms of Service.',
     ctaTitle: 'Put windows in their places',
-    ctaBody: 'Download notarized 0.5.3, walk through the welcome tour, and try Pro for 14 days.',
+    ctaBody: 'Download notarized 0.5.4, walk through the welcome tour, and try Pro for 14 days.',
     footerPrivacy: 'Privacy',
     footerTerms: 'Terms of Service',
     footerGithub: '下载',
-    footerNote: '© 2026 Wyman. 0.5.3 covers Apple Silicon and Intel.',
+    footerNote: '© 2026 Wyman. 0.5.4 covers Apple Silicon and Intel.',
     privacyKicker: 'Privacy',
     privacyTitle: 'Everything stays on this Mac.',
     privacyIntro:
